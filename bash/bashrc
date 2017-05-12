@@ -9,7 +9,7 @@ if [[ -f /etc/bashrc ]] ; then
 fi
 
 # Source local definitions (if any)
-for script in ~.bashrc.d/*.sh ; do
+for script in ~/.bashrc.d/*.sh ; do
 	source $script
 done
 unset -v script
