@@ -4,7 +4,7 @@
 [[ -z "$PS1" ]] && return
 
 # Source local definitions (if any)
-for script in ~/.profile.d/{function,path}.sh ; do
+for script in ~/.profile.d/{function,path,env}.sh ; do
 	source $script
 done
 unset -v script
