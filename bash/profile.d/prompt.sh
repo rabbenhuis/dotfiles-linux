@@ -8,8 +8,10 @@ case ${TERM} in
 		PS1=${PS1}"\u@\h "
 		# PWD (with disk space info)
 		PS1=${PS1}"\w] "
-		# git info (needs bash-completion)
-		PS1=${PS1}'$(__git_ps1 "(%s) ")'
+		if $(is-supported "__git_ps1") ; then
+			# git info (needs bash-completion)
+			PS1=${PS1}'$(__git_ps1 "(%s) ")'
+		fi
 		# Prompt (with 'job' info)
 		PS1=${PS1}"$ "
 		# Set title of the current xterm

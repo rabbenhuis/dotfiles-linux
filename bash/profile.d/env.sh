@@ -45,7 +45,3 @@ export DISPLAY
 
 # Enable colors
 export CLICOLOR=1
-
-export LS_COLORS=`is-supported "ls --color" --color -G`
-export LS_TIMESTYLEISO=`is-supported "ls --time-style=long-iso" --time-style=long-iso`
-export LS_GROUPDIRSFIRST=`is-supported "ls --group-directories-first" --group-directories-first`
