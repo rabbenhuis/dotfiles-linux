@@ -14,5 +14,6 @@ elif is-supported "echo | grep --exclude=.cvs ''"; then
 	done
 fi
 
-export GREP_OPTIONS
+alias grep="grep $GREP_OPTIONS"
+
 export GREP_COLOR='1;32'
