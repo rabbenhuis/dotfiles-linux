@@ -28,3 +28,11 @@ for script in ./bash/profile.d/*.sh ; do
 	fi
 done
 unset -v script
+
+# Copy scripts to ~/.bashrc.d
+for script in ./bash/bashrc.d/*.sh ; do
+	if [[ -r "$script" ]]; then
+		cp $script ~/.bashrc.d/$(basename $script)
+	fi
+done
+unset -v script
