@@ -7,6 +7,8 @@ is-executable /usr/bin/getconf && PATH=$(`command -v /usr/bin/getconf` PATH)
 prepend-path "/bin"
 prepend-path "/usr/bin"
 prepend-path "/usr/local/bin"
+prepend-path "/opt/puppetlabs/puppet/bin"
+prepend-path "$HOME/.gem/ruby/2.1.0/bin"
 prepend-path "$HOME/bin"
 prepend-path "/sbin"
 prepend-path "/usr/sbin"
