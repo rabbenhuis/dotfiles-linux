@@ -7,3 +7,9 @@
 if [[ -f /etc/bashrc ]] ; then
         source /etc/bashrc
 fi
+
+# Source local definitions (if any)
+for script in ~.bashrc.d/*.sh ; do
+	source $script
+done
+unset -v script

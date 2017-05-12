@@ -10,12 +10,16 @@ for dotfile in ./bash/{bash_profile,bashrc} ; do
 done
 unset dotfile
 
-# Create the profile.d directory
-if [[ -d ~/.profile.d ]] ; then
-	rm -rf ~/.profile.d
-fi
-mkdir -p ~/.profile.d
-chmod 750 ~/.profile.d
+# Create the profile.d and bashrc.d directories
+for dir in {.profile.d,.bashrc.d} ; do
+	if [[ -d ~/$dir ]] ; then
+		rm -rf ~/$dir
+	fi
+
+	mkdir -p ~/$dir
+	chmod 750 ~/$dir
+done
+unset dir
 
 # Copy scripts to ~/.profile.d
 for script in ./bash/profile.d/*.sh ; do
