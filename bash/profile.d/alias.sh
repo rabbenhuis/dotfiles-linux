@@ -1,6 +1,5 @@
 # Global aliases
 if $(is-supported "alias -g"); then
-	alias -g G="| grep -i"
 	alias -g H="| head"
 	alias -g T="| tail"
 	alias -g L="| less"
