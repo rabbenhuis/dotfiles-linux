@@ -151,7 +151,7 @@ case ${TERM} in
 		PS1=${PS1}"\[\$(disk_color)\]\w\[${COLOR_RESET}\]] "
 		if $(is-supported "__git_ps1") ; then
 			# git info (needs bash-completion)
-			PS1=${PS1}'$(__git_ps1 "\[${AF_COLOR_YELLOQ}\](%s)\[${COLOR_RESET}\] ")'
+			PS1=${PS1}'$(__git_ps1 "\[${AF_COLOR_YELLOW}\](%s)\[${COLOR_RESET}\] ")'
 		fi
 		# Prompt (with 'job' info)
 		PS1=${PS1}"\[\$(job_color)\]$\[${COLOR_RESET}\] "
