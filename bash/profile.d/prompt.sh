@@ -151,7 +151,7 @@ case ${TERM} in
 		PS1=${PS1}"\[\$(disk_color)\]\w\[${COLOR_RESET}\]] "
 		if $(is-supported "__git_ps1") ; then
 			# git info (needs bash-completion)
-			PS1=${PS1}'$(__git_ps1 "\[${AF_COLOR_GREEN}\](%s)\[${COLOR_RESET}\] ")'
+			PS1=${PS1}'$(__git_ps1 "\[${AF_COLOR_YELLOQ}\](%s)\[${COLOR_RESET}\] ")'
 		fi
 		# Prompt (with 'job' info)
 		PS1=${PS1}"\[\$(job_color)\]$\[${COLOR_RESET}\] "
@@ -162,14 +162,3 @@ case ${TERM} in
 		PS1="(\A \u@\h \w) > "
 		;;
 esac
-
-# Unset normal colors
-unset AF_COLOR_BLACK AF_COLOR_RED AF_COLOR_GREEN AF_COLOR_YELLOW AF_COLOR_BLUE AF_COLOR_MAGENTA AF_COLOR_CYAN AF_COLOR_WHITE
-
-# Unset bold colors
-unset AF_COLOR_BOLD_BLACK AF_COLOR_BOLD_RED AF_COLOR_BOLD_GREEN AF_COLOR_BOLD_YELLOW AF_COLOR_BOLD_BLUE AF_COLOR_BOLD_MAGENTA AF_COLOR_BOLD_CYAN AF_COLOR_BOLD_WHITE
-
-# Unset background colors
-unset AB_COLOR_BLACK AB_COLOR_RED AB_COLOR_GREEN AB_COLOR_YELLOW AB_COLOR_BLUE AB_COLOR_MAGENTA AB_COLOR_CYAN AB_COLOR_WHITE
-
-unset COLOR_RESET COLOR_ALERT
