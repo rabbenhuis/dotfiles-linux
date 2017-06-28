@@ -154,7 +154,7 @@ case ${TERM} in
 			PS1=${PS1}'$(__git_ps1 "\[${AF_COLOR_YELLOW}\](%s)\[${COLOR_RESET}\] ")'
 		fi
 		# Prompt (with 'job' info)
-		PS1=${PS1}"\[\$(job_color)\]$\[${COLOR_RESET}\] "
+		PS1=${PS1}"\[\$(job_color)\]\n$\[${COLOR_RESET}\] "
 		# Set title of the current xterm
 		PS1=${PS1}"\[\e]0;[\u@\h] \w\a\]"
 		;;
