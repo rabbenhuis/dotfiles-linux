@@ -1,17 +1,7 @@
 #!/bin/bash
 
-# Copy bash_profile and bashrc
-for dotfile in ./bash/{bash_profile,bashrc} ; do
-        if [[ -f ~/.$(basename $dotfile) ]] ; then
-                rm -f ~/.$(basename $dotfile)
-        fi
-
-        cp $dotfile ~/.$(basename $dotfile)
-done
-unset dotfile
-
-# Create the profile.d and bashrc.d directories
-for dir in {.profile.d,.bashrc.d} ; do
+# Create needed directories
+for dir in {bin,.profile.d,.bashrc.d} ; do
 	if [[ -d ~/$dir ]] ; then
 		rm -rf ~/$dir
 	fi
@@ -20,6 +10,9 @@ for dir in {.profile.d,.bashrc.d} ; do
 	chmod 750 ~/$dir
 done
 unset dir
+
+# Get git-prompt.sh
+curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh > ~/.profile.d/git-prompt.sh
 
 # Copy scripts to ~/.profile.d
 for script in ./bash/profile.d/*.sh ; do
@@ -36,3 +29,13 @@ for script in ./bash/bashrc.d/*.sh ; do
 	fi
 done
 unset -v script
+
+# Copy bash_profile and bashrc
+for dotfile in ./bash/{bash_profile,bashrc} ; do
+        if [[ -f ~/.$(basename $dotfile) ]] ; then
+                rm -f ~/.$(basename $dotfile)
+        fi
+
+        cp $dotfile ~/.$(basename $dotfile)
+done
+unset dotfile
