@@ -1,2 +1,3 @@
 # dotfiles-linux
-Linux dotfiles
+
+Linux bash dotfiles
