@@ -11,10 +11,6 @@ for dir in {.profile.d,.bashrc.d} ; do
 done
 unset dir
 
-# Get git-prompt.sh and git-completion
-curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh > ~/.profile.d/git-prompt.sh
-curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash > ~/.profile.d/git-completion.sh
-
 # Copy scripts to ~/.profile.d
 for script in ./bash/profile.d/*.sh ; do
 	if [[ -r "$script" ]]; then
